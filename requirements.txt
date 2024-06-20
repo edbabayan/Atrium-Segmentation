@@ -1,0 +1,5 @@
+nibabel==5.2.1
+matplotlib==3.9.0
+celluloid==0.2.0
+IPython==8.25.0
+loguru==0.7.2
