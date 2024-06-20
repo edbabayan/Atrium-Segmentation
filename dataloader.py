@@ -3,12 +3,18 @@ from pathlib import Path
 import torch
 import numpy as np
 import imgaug
+from imgaug import augmenters as iaa
 from imgaug.augmentables.segmaps import SegmentationMapsOnImage
 
 
 class CardiacDataset(torch.utils.data.Dataset):
-    def __init__(self, root, augment_params):
+    def __init__(self, root, augment_params=None):
         self.all_files = self.extract_files(root)
+        if augment_params is None:
+            augment_params = iaa.Sequential([
+                iaa.Affine(scale=(0.85, 1.15), rotate=(-45, 45)),
+                iaa.ElasticTransformation()
+            ])
         self.augment_params = augment_params
 
     @staticmethod
