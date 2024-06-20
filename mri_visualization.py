@@ -8,8 +8,8 @@ import matplotlib.animation as animation
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
-root = Path("root_path")
-label = Path("label_path")
+root = Path("path_to/imagesTr")
+label = Path("path_to/labelsTr")
 
 
 def change_img_to_label_path(path):
@@ -50,7 +50,7 @@ class MRIAnimationApp:
 
 
 if __name__ == "__main__":
-    root_path = Path("to/your/root/path")
+    root_path = Path(root)
     root = tk.Tk()
     app = MRIAnimationApp(root)
     root.mainloop()
