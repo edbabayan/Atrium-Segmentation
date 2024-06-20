@@ -4,3 +4,5 @@ celluloid==0.2.0
 IPython==8.25.0
 loguru==0.7.2
 tqdm==4.66.4
+torch==2.3.1
+imgaug==0.4.0
