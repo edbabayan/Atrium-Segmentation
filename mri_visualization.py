@@ -23,6 +23,7 @@ class MRIAnimationApp:
         self.root = root
         self.root.title("MRI Animation")
 
+        # YOu can change the sample path to any other path
         self.sample_path = list(root_path.glob('la*'))[0]
         self.sample_label_path = change_img_to_label_path(self.sample_path)
 
