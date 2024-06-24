@@ -18,6 +18,7 @@ class SegmentationTrainer:
 
         self.train_data_dir = CFG.training_data_dir
         self.val_data_dir = CFG.validation_data_dir
+        self.checkpoints_path = CFG.checkpoints_path
         self.logs_path = CFG.logs_path
 
         self.model = AtriumSegmentation()
@@ -43,8 +44,8 @@ class SegmentationTrainer:
         return train_loader, val_loader
 
     def initialize_checkpoint_callback(self):
-        checkpoint_callback = ModelCheckpoint(monitor='Validation loss:',
-                                              save_top_k=self.max_k, mode='min')
+        checkpoint_callback = ModelCheckpoint(monitor='Validation loss:', save_top_k=self.max_k,
+                                              mode='min', dirpath=self.checkpoints_path)
         return checkpoint_callback
 
     def initialize_logger(self):

@@ -8,6 +8,7 @@ class CFG:
 
     training_data_dir = save_path.joinpath('train')
     validation_data_dir = save_path.joinpath('val')
+    checkpoints_path = root.joinpath('checkpoints')
 
     batch_size = 16
     num_workers = 4
