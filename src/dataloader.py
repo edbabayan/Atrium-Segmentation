@@ -8,9 +8,9 @@ from imgaug.augmentables.segmaps import SegmentationMapsOnImage
 
 
 class CardiacDataset(torch.utils.data.Dataset):
-    def __init__(self, root, augment_params=None):
+    def __init__(self, root, augment_params=None, apply_augmentation=False):
         self.all_files = self.extract_files(root)
-        if augment_params is None:
+        if augment_params is None and apply_augmentation:
             augment_params = iaa.Sequential([
                 iaa.Affine(scale=(0.85, 1.15), rotate=(-45, 45)),
                 iaa.ElasticTransformation()
