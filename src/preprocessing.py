@@ -49,7 +49,7 @@ class MRIProcessor:
                 slice = standardized[:, :, i]
                 mask = label_data[:, :, i]
                 slice_path = current_path / 'data'
-                mask_path = current_path / 'label'
+                mask_path = current_path / 'masks'
                 slice_path.mkdir(parents=True, exist_ok=True)
                 mask_path.mkdir(parents=True, exist_ok=True)
                 np.save(slice_path / f'{i}.npy', slice)
