@@ -3,7 +3,7 @@ import nibabel as nib
 import numpy as np
 from tqdm import tqdm
 
-from config import CFG
+from src.config import CFG
 
 
 class MRIProcessor:
@@ -63,6 +63,6 @@ class MRIProcessor:
 
 
 if __name__ == "__main__":
-    root_path = Path('')
+    root_path = Path('/home/eduard/Downloads/Task02_Heart/imagesTr')
     processor = MRIProcessor(save_root=CFG.save_path)
     processor.process(root_path)
